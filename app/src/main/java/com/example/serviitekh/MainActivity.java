@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
                     for (int i = 0; i < UsuariosBBDD.length; i++) {
 
-                        if (UsuariosBBDD.equals(userIntroducido)) {
+                        if (UsuariosBBDD[i].equals(userIntroducido[i])) {
                             Toast.makeText(MainActivity.this, "Usuario correcto", Toast.LENGTH_SHORT).show();
 
 
