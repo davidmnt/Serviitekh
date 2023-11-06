@@ -2,9 +2,11 @@ package com.example.serviitekh;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,14 +17,20 @@ import com.example.serviitekh.Conexion.Modelo;
 import com.example.serviitekh.Conexion.conex;
 import com.example.serviitekh.Obj.Usuarios;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class MainActivity extends AppCompatActivity {
     static Modelo m = new Modelo();
     static Cursor cur;
     static Usuarios u = new Usuarios();
     static String usuario;
     static String passw;
-    static String[] UsuariosBBDD;
-    static String[] userIntroducido;
+    static String userIntroducido;
+    static boolean encontrado;
+    static String[] datosBBDD = new String[0];
+    static int dimensionBBDD = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,31 +48,59 @@ public class MainActivity extends AppCompatActivity {
         botonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                encontrado = false;
 
+
+                //Cogemos la query para sacar todas las columnas que queremos para la siguiente query;
                 cur = db.query("USUARIOS", null, null, null, null, null, null);
                 String[] columnasBBDD = {cur.getColumnName(0), cur.getColumnName(1)};
 
-                if (cur.getCount() > 0) {
+                //Le damos dimension de la bbdd
+                dimensionBBDD = cur.getCount();
 
+                //Asignamos diemnsion al array
+                datosBBDD = new String[dimensionBBDD];
+
+                Log.e("Columnas", Arrays.toString(columnasBBDD));
+                if (dimensionBBDD > 0) {
+
+                    //Cogemos la query para sacar todos los datos de la tabla como un select * from USUARIOS;
                     cur = db.query("USUARIOS", columnasBBDD, null, null, null, null, null);
-                    cur.moveToFirst();
-                    String datosUsuarioUser = cur.getString(0);
-                    String datosUsuarioPass = cur.getString(1);
-                    UsuariosBBDD = new String[]{datosUsuarioUser + " " + datosUsuarioPass};
-                    userIntroducido = new String[]{user.getText().toString() + " " + pass.getText().toString()};
 
-                    for (int i = 0; i < UsuariosBBDD.length; i++) {
+                    //Bucle para meter la bbdd en un array list
+                    for (int i = 0; i < dimensionBBDD; i++) {
+                        cur.moveToNext();
+                        datosBBDD[i] = cur.getString(0) + cur.getString(1);
 
-                        if (UsuariosBBDD[i].equals(userIntroducido[i])) {
-                            Toast.makeText(MainActivity.this, "Usuario correcto", Toast.LENGTH_SHORT).show();
+                    }
 
+                    //Sacamos al log el resultado del array
+                    Log.e("User arrayList", Arrays.toString(datosBBDD));
 
-                        }else{
-                            textError.setText("Usuario incorrecto o tienes que registrate");
+                    userIntroducido = user.getText().toString() + pass.getText().toString();
+
+                    String[] arrIntr = new String[1];
+                    arrIntr[0] = userIntroducido;
+
+                    Log.e("Result array de introducion", Arrays.toString(arrIntr));
+
+                    //Bucle para comprobar si esta el usuario en la base de datos o no
+                    for (int i = 0; i < datosBBDD.length; i++) {
+                        if (datosBBDD[i].equals(arrIntr[0])) {
+                            Toast.makeText(getApplicationContext(), "Usuario correcto", Toast.LENGTH_SHORT).show();
+                            encontrado = true;
+                            textError.setText("");
+                            mandarHome();
+                            break;
                         }
+
                     }
                 }
 
+                //En caso de que no se ecnuentre el usuario sacar un error
+                if (encontrado == false) {
+                    textError.setText("Usuario incorrecto o tienes que registrate");
+                }
             }
         });
 
@@ -75,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 usuario = user.getText().toString();
                 passw = pass.getText().toString();
 
-                u = new Usuarios(usuario,passw);
+                u = new Usuarios(usuario, passw);
 
                 resInsert = m.insertarUssuario(getApplicationContext(), u);
                 if (resInsert == 1) {
@@ -89,6 +125,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void mandarHome(){
+        Intent i = new Intent(this,HomeActivity.class);
+        startActivity(i);
     }
 
 }
