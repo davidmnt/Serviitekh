@@ -6,4 +6,132 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Serviitekh"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="680dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageButton
+                android:id="@+id/producto1"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/marketindigital"
+                android:adjustViewBounds="true"
+                android:backgroundTint="@color/white"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/consScroll" />
+
+            <TextView
+                android:id="@+id/textProducto1"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="Marketing digital"
+                app:layout_constraintEnd_toEndOf="@+id/producto1"
+                app:layout_constraintStart_toStartOf="@+id/producto1"
+                app:layout_constraintTop_toBottomOf="@+id/producto1" />
+
+            <ImageButton
+                android:id="@+id/producto2"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/logoredes"
+                android:adjustViewBounds="true"
+                android:backgroundTint="@color/white"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/producto1"
+                app:layout_constraintTop_toTopOf="@+id/producto1"
+                />
+
+            <TextView
+                android:id="@+id/textProducto2"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="Seguimiento en redes sociales"
+                app:layout_constraintEnd_toEndOf="@+id/producto2"
+                app:layout_constraintStart_toStartOf="@+id/producto2"
+                app:layout_constraintTop_toBottomOf="@+id/producto2" />
+
+            <ImageButton
+                android:id="@+id/producto3"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/logo_paginas_web_predeterminadas"
+                android:adjustViewBounds="true"
+                android:backgroundTint="@color/white"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textProducto1" />
+
+            <TextView
+                android:id="@+id/textProducto3"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="Paginas Web Predeterminadas"
+                app:layout_constraintEnd_toEndOf="@+id/producto3"
+                app:layout_constraintStart_toStartOf="@+id/producto3"
+                app:layout_constraintTop_toBottomOf="@+id/producto3" />
+
+            <ImageButton
+                android:id="@+id/producto4"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/logo_paginas_web_person"
+                android:adjustViewBounds="true"
+                android:backgroundTint="@color/white"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/producto1"
+                app:layout_constraintTop_toBottomOf="@+id/textProducto2"
+                app:layout_constraintTop_toTopOf="@+id/producto3" />
+
+            <TextView
+                android:id="@+id/textProducto4"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="Paginas Web Personalizadas"
+                app:layout_constraintEnd_toEndOf="@+id/producto4"
+                app:layout_constraintStart_toStartOf="@+id/producto4"
+                app:layout_constraintTop_toBottomOf="@+id/producto4" />
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
