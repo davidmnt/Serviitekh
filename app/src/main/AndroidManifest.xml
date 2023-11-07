@@ -13,6 +13,21 @@
         android:theme="@style/Theme.Serviitekh"
         tools:targetApi="31">
         <activity
+            android:name=".WebPredeterminadaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WebPersonalizadasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RedesSocialesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MarketingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SobreNosotrosActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
