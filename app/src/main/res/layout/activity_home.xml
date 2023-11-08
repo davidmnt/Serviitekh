@@ -6,16 +6,44 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <TextView
-        android:id="@+id/titulo"
+    <LinearLayout
+        android:id="@+id/linearArriba"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="80dp"
+        android:layout_weight="0.1"
         android:gravity="center"
-        android:text="Serviitekh"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/texto_arriba"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text=""
+            android:textSize="26dp"
+            android:layout_marginStart="10dp"
+            />
+        <ImageButton
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/carro_logo"
+            android:scaleType="fitEnd"
+            android:backgroundTint="@color/white"/>
+        <ImageButton
+            android:id="@+id/usuario_imagen_inicio"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/goto_perfil"
+            android:scaleType="fitEnd"
+            android:layout_marginEnd="5dp"
+            android:padding="8dp"
+            />
+    </LinearLayout>
 
 
     <ImageButton
@@ -29,7 +57,7 @@
         android:scaleType="centerCrop"
         android:src="@drawable/marketindigital"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo" />
+        app:layout_constraintTop_toBottomOf="@+id/linearArriba" />
 
     <TextView
         android:id="@+id/textProducto1"
@@ -116,6 +144,7 @@
         android:id="@+id/SobreNosotros"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">

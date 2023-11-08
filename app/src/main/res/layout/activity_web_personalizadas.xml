@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:gravity="center"
-                android:text="¿Necesitas posicionarte en las mejores páginas de Google? "
+                android:text="¿Necesitas paginas más a tu gusto? "
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +56,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:gravity="center"
-                android:text="Estas en el lugar correcto somos los mejores para solventar tu problema, con nuestro estudio del algoritmo de Google"
+                android:text="Estas en el lugar correcto somos los mejores para solventar tu problema, creamos
+                paginas con el mejor algoritmo para estar
+                situada arriba de google. ¡¡Ademas a tu gusto!!"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +67,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/card1"
                 android:layout_width="120dp"
-                android:layout_height="400dp"
+                android:layout_height="530dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toStartOf="@id/card2"
@@ -89,11 +91,18 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="1.Comprobación de la composicion de la web
+                        android:text="Alojamiento y dominio
                   ----------------------------
-                              2.Seguimiento de la web
+                              Certificados SSL
                                 ----------------------------
-                              3.Soporte tecnico de 1 año"
+                              Actualizaciones de imágenes y texto
+                                ----------------------------
+                              Cumplimiento del RGPD y LOPD
+                              ----------------------------
+                              Copias de seguridad
+                              ----------------------------
+                              Soporte tecnico de 6 meses"
+
                         android:textSize="15dp" />
 
 
@@ -104,19 +113,19 @@
 
             <Button
                 android:id="@+id/BotonCard1"
-                android:layout_width="130dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/amarillo"
                 android:text="90$"
                 android:textColor="@color/black"
-                app:layout_constraintStart_toStartOf="@id/card1"
                 app:layout_constraintEnd_toEndOf="@id/card1"
+                app:layout_constraintStart_toStartOf="@id/card1"
                 app:layout_constraintTop_toBottomOf="@id/card1" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card2"
                 android:layout_width="120dp"
-                android:layout_height="400dp"
+                android:layout_height="530dp"
                 android:layout_marginStart="5dp"
 
                 android:layout_marginTop="20dp"
@@ -141,11 +150,23 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="1.Comprobación de la composicion de la web
-                                  ----------------------------
-                              2.Seguimiento de la web
+                        android:text="Alojamiento y dominio
+                  ----------------------------
+                              Certificados SSL
                                 ----------------------------
-                              3.Soporte tecnico de 10 año"
+                              Actualizaciones de imágenes y texto
+                                ----------------------------
+                              Cumplimiento del RGPD y LOPD
+                              ----------------------------
+                              Copias de seguridad
+                              ----------------------------
+                              Informe SEO mensual
+                              ----------------------------
+                              Optimización de tus servicios
+                              ----------------------------
+                              Creación/Optimización de la ficha de Google Maps
+                              ----------------------------
+                              Soporte tecnico de 2 años"
                         android:textSize="15dp" />
 
 
@@ -155,19 +176,19 @@
 
             <Button
                 android:id="@+id/BotonCard2"
-                android:layout_width="130dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/amarillo"
                 android:text="180$"
                 android:textColor="@color/black"
-                app:layout_constraintStart_toStartOf="@id/card2"
                 app:layout_constraintEnd_toEndOf="@id/card2"
+                app:layout_constraintStart_toStartOf="@id/card2"
                 app:layout_constraintTop_toBottomOf="@id/card2" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card3"
                 android:layout_width="120dp"
-                android:layout_height="400dp"
+                android:layout_height="530dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -192,13 +213,23 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="1.Comprobación de la composicion de la web
+                        android:text="Alojamiento y dominio
+                  ----------------------------
+                              Certificados SSL
                                 ----------------------------
-                              2.Seguimiento de la web
+                              Actualizaciones de imágenes y texto
+                                ----------------------------
+                              Cumplimiento del RGPD y LOPD
                               ----------------------------
-                              3.Posicionamiento en los mejores puestos de Google
+                              Copias de seguridad
                               ----------------------------
-                              4.Soporte tecnico de por vida"
+                              Informe SEO semanal
+                              ----------------------------
+                              Optimización de tus servicios
+                              ----------------------------
+                              Creación/Optimización de la ficha de Google Maps
+                              ----------------------------
+                              Soporte tecnico de 5 años"
                         android:textSize="15dp" />
 
 
@@ -208,13 +239,13 @@
 
             <Button
                 android:id="@+id/BotonCard3"
-                android:layout_width="130dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/amarillo"
-                android:text="450$"
+                android:text="300$"
                 android:textColor="@color/black"
-                app:layout_constraintStart_toStartOf="@id/card3"
                 app:layout_constraintEnd_toEndOf="@id/card3"
+                app:layout_constraintStart_toStartOf="@id/card3"
                 app:layout_constraintTop_toBottomOf="@id/card3" />
 
 

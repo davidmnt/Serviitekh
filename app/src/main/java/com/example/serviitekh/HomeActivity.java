@@ -6,8 +6,10 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -20,6 +22,11 @@ public class HomeActivity extends AppCompatActivity {
         ImageButton botonWebPredeterminado = findViewById(R.id.producto3);
         ImageButton botonWebPersonalizadas = findViewById(R.id.producto4);
         CardView card = findViewById(R.id.SobreNosotros);
+        TextView textBienvenida = findViewById(R.id.texto_arriba);
+
+        String nombre = getIntent().getStringExtra("USUARIO");
+        textBienvenida.setText("Bienvenido a Serviitekh " + nombre.toUpperCase());
+        Log.e("Usuario",nombre);
 
         card.setOnClickListener(new View.OnClickListener() {
             @Override

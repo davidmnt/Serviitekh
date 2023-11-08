@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     static boolean encontrado;
     static String[] datosBBDD = new String[0];
     static int dimensionBBDD = 0;
+    static String userName = "";
 
 
     @Override
@@ -42,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         Button botonLogin = findViewById(R.id.login);
         Button botonRegistro = findViewById(R.id.register);
 
+
+
         conex conn = new conex(this, "REGISTROS", null, 1);
         SQLiteDatabase db = conn.getReadableDatabase();
 
@@ -49,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 encontrado = false;
-
+                userName = user.getText().toString();
 
                 //Cogemos la query para sacar todas las columnas que queremos para la siguiente query;
                 cur = db.query("USUARIOS", null, null, null, null, null, null);
@@ -70,14 +73,14 @@ public class MainActivity extends AppCompatActivity {
                     //Bucle para meter la bbdd en un array list
                     for (int i = 0; i < dimensionBBDD; i++) {
                         cur.moveToNext();
-                        datosBBDD[i] = cur.getString(0) + cur.getString(1);
+                        datosBBDD[i] = cur.getString(0).toLowerCase() + cur.getString(1).toLowerCase();
 
                     }
 
                     //Sacamos al log el resultado del array
                     Log.e("User arrayList", Arrays.toString(datosBBDD));
 
-                    userIntroducido = user.getText().toString() + pass.getText().toString();
+                    userIntroducido = user.getText().toString().toLowerCase() + pass.getText().toString().toLowerCase();
 
                     String[] arrIntr = new String[1];
                     arrIntr[0] = userIntroducido;
@@ -107,8 +110,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int resInsert = 0;
-                usuario = user.getText().toString();
-                passw = pass.getText().toString();
+                usuario = user.getText().toString().toLowerCase();
+                passw = pass.getText().toString().toLowerCase();
 
                 u = new Usuarios(usuario, passw);
 
@@ -128,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void mandarHome(){
         Intent i = new Intent(this,HomeActivity.class);
+        i.putExtra("USUARIO",userName);
         startActivity(i);
     }
 
