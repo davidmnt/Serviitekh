@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
 
+    private static String nombre = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,8 +24,9 @@ public class HomeActivity extends AppCompatActivity {
         ImageButton botonWebPersonalizadas = findViewById(R.id.producto4);
         CardView card = findViewById(R.id.SobreNosotros);
         TextView textBienvenida = findViewById(R.id.texto_arriba);
+        ImageButton perfil = findViewById(R.id.usuario_imagen_inicio);
 
-        String nombre = getIntent().getStringExtra("USUARIO");
+         nombre = getIntent().getStringExtra("USUARIO");
         textBienvenida.setText("Bienvenido a Serviitekh " + nombre.toUpperCase());
         Log.e("Usuario",nombre);
 
@@ -60,7 +62,18 @@ public class HomeActivity extends AppCompatActivity {
                 MandarWebPersonalizada();
             }
         });
+        perfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mandarPerfil();
+            }
+        });
 
+    }
+    private void mandarPerfil(){
+        Intent i = new Intent(this,PerfilActivity.class);
+        i.putExtra("User",nombre);
+        startActivity(i);
     }
 
     private void MandarSobreNosotros(){
